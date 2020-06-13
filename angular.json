@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "homeday-app"
+    }
+  },
+  "defaultProject": "homeday-app",
+  "cli": {
+    "analytics": false
+  }
 }
