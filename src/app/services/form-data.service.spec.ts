@@ -1,6 +1,6 @@
-import { TestBed } from '@angular/core/testing';
+import {TestBed} from '@angular/core/testing';
 
-import { FormDataService } from './form-data.service';
+import {FormDataService} from './form-data.service';
 
 describe('FormDataService', () => {
   let service: FormDataService;
@@ -15,11 +15,11 @@ describe('FormDataService', () => {
   });
 
   it('should have a property holding the personal details form data', () => {
-    expect('personalDetails' in  service).toBeTruthy();
+    expect('personalDetails' in service).toBeTruthy();
   });
 
   it('should have a property holding the salary indication form data', () => {
-    expect('salary' in  service).toBeTruthy();
+    expect('salaryInfo' in service).toBeTruthy();
   });
 
   it('should keep track of the number of form pages', () => {
@@ -29,13 +29,15 @@ describe('FormDataService', () => {
   it('should be able to reset the form fields', () => {
 
     service.personalDetails = {fullName: 'Joe Test', phoneNumber: '123-4567', email: 'joe@test.com'};
-    service.salary = {salaryRange: '10000-15000'};
+    service.salaryInfo = {salaryRange: '10000-15000', currentWorkplaceName: 'Test Co.', doesHaveDebt: false};
 
     service.resetData();
 
-    expect(service.personalDetails.fullName).toBe('')
-    expect(service.personalDetails.phoneNumber).toBe('')
-    expect(service.personalDetails.email).toBe('')
-    expect(service.salary.salaryRange).toBe('')
+    expect(service.personalDetails.fullName).toBe('');
+    expect(service.personalDetails.phoneNumber).toBe('');
+    expect(service.personalDetails.email).toBe('');
+    expect(service.salaryInfo.salaryRange).toBe('');
+    expect(service.salaryInfo.currentWorkplaceName).toBe('');
+    expect(service.salaryInfo.doesHaveDebt).toBe(false);
   });
 });

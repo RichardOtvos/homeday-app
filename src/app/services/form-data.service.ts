@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {PersonalDetails} from "../models/personal-details";
-import {Salary} from "../models/salary";
+import {SalaryInfo} from "../models/salary-info";
 
 @Injectable({
   providedIn: 'root'
@@ -9,7 +9,7 @@ export class FormDataService {
   public totalFormPages = 3
 
   public personalDetails: PersonalDetails;
-  public salary: Salary;
+  public salaryInfo: SalaryInfo;
 
   constructor() {
     this.resetData();
@@ -17,6 +17,6 @@ export class FormDataService {
 
   resetData(){
     this.personalDetails = {fullName: '', email: '', phoneNumber: ''};
-    this.salary = {salaryRange: ''};
+    this.salaryInfo = {salaryRange: '', currentWorkplaceName: '', doesHaveDebt: false};
   }
 }
