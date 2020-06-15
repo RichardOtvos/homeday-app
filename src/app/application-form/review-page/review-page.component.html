@@ -1,5 +1,30 @@
 <div class="review-page">
   <h1>Review your application</h1>
+  <div class="review-field">
+    <p class="label">Full name</p>
+    <p class="value">{{formsData.personalDetails.fullName}}</p>
+  </div>
+  <div class="review-field">
+    <p class="label">Email</p>
+    <p class="value">{{formsData.personalDetails.email}}</p>
+  </div>
+  <div class="review-field">
+    <p class="label">Phone Number</p>
+    <p class="value">{{formsData.personalDetails.phoneNumber || 'N/A'}}</p>
+  </div>
+  <div class="review-field">
+    <p class="label">Current Workplace:</p>
+    <p class="value">{{formsData.salaryInfo.currentWorkplaceName || 'N/A'}}</p>
+  </div>
+  <div class="review-field">
+    <p class="label">Salary</p>
+    <p class="value">{{formsData.salaryInfo.salaryRange}}</p>
+  </div>
+  <div class="review-field debt-field">
+    <p *ngIf="formsData.salaryInfo.doesHaveDebt; else elseBlock">I have some debt</p>
+    <ng-template #elseBlock><p>I don't have any debt</p></ng-template>
+  </div>
+
 
   <div class="button-bar">
     <button mat-button (click)="onClickBack()">Back</button>

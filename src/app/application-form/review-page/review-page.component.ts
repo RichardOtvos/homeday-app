@@ -26,6 +26,10 @@ export class ReviewPageComponent implements OnInit {
     this.onBack.emit();
   }
 
+  getReviewData(){
+    return {...this.formsData.personalDetails, ...this.formsData.salaryInfo};
+  }
+
 
 
 }
