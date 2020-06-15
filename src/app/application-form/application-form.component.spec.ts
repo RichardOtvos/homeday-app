@@ -8,7 +8,7 @@ import {NO_ERRORS_SCHEMA} from "@angular/core";
 
 import {MatProgressBarHarness} from '@angular/material/progress-bar/testing';
 
-fdescribe('ApplicationFormComponent', () => {
+describe('ApplicationFormComponent', () => {
   let component: ApplicationFormComponent;
   let fixture: ComponentFixture<ApplicationFormComponent>;
   let loader: HarnessLoader;
