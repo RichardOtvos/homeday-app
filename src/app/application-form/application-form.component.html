@@ -4,9 +4,12 @@
     <app-personal-data-form *ngSwitchCase="FORM_PAGES.PersonalData"
                             (onNext)="goToSalaryInfoForm()"></app-personal-data-form>
     <app-salary-info-form *ngSwitchCase="FORM_PAGES.SalaryInfo"
-                          (onNext)="goToReviewPage()"
                           (onBack)="goToPersonalDataForm()"
+                          (onNext)="goToReviewPage()"
     ></app-salary-info-form>
-    <app-review-page *ngSwitchCase="FORM_PAGES.Review"></app-review-page>
+    <app-review-page *ngSwitchCase="FORM_PAGES.Review"
+                     (onBack)="goToSalaryInfoForm()"
+                     (onSubmit)="submitForm($event)"
+    ></app-review-page>
   </mat-card-content>
 </mat-card>

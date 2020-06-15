@@ -1,4 +1,4 @@
-<form class="salary-info-form ">
+<form class="salary-info-form" #salaryInfoForm='ngForm'>
   <h2>Tell us about your financial situation...</h2>
   <mat-form-field appearance="standard" class="field-full-width">
     <mat-label>Current Workplace</mat-label>
@@ -7,7 +7,7 @@
   </mat-form-field>
 
   <p class="field-label"><label>What is your salary (in Euros)?</label></p>
-  <mat-radio-group name="salary-range" aria-label="Select an option" [(ngModel)]="formsData.salaryInfo.salaryRange">
+  <mat-radio-group required name="salary-range" aria-label="Select an option" [(ngModel)]="formsData.salaryInfo.salaryRange">
     <mat-radio-button value="0 - 1000">0 - 1000</mat-radio-button>
     <mat-radio-button value="1000 - 2000">1000 - 2000</mat-radio-button>
     <mat-radio-button value="2000 - 3000">2000 - 3000</mat-radio-button>
@@ -20,8 +20,9 @@
     </mat-checkbox>
   </p>
 
-  <mat-card-actions>
+  <div class="button-bar">
     <button mat-button (click)="onClickBack()">Back</button>
-    <button mat-raised-button color="primary" (click)="onClickNext()">Next</button>
-  </mat-card-actions>
+    <button mat-raised-button color="primary" [disabled]="salaryInfoForm.invalid"
+            (click)="onClickNext()">Next</button>
+  </div>
 </form>

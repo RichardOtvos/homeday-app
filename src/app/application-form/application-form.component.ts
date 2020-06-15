@@ -1,4 +1,6 @@
 import {Component, OnInit} from '@angular/core';
+import {PersonalDetails} from "../models/personal-details";
+import {SalaryInfo} from "../models/salary-info";
 
 @Component({
   selector: 'app-application-form',
@@ -46,6 +48,10 @@ export class ApplicationFormComponent implements OnInit {
   goToPersonalDataForm() {
     this.currentFormPage = this.FORM_PAGES.PersonalData;
     this.progressBarState = this.getProgressBarState();
+  }
+
+  submitForm(formData: PersonalDetails & SalaryInfo){
+    console.log('sent the following data', formData);
   }
 
 }

@@ -1,21 +1,23 @@
-<form class="personal-data-form">
+<form class="personal-data-form" #personalDataForm='ngForm'>
   <h2>Let us know a little bit about yourself...</h2>
   <mat-form-field appearance="standard" class="field-full-width">
     <mat-label>Full Name</mat-label>
-    <input matInput  name="full-name" placeholder="Full Name" [(ngModel)]="formsData.personalDetails.fullName">
+    <input matInput minlength="3" required name="full-name" placeholder="Full Name" [(ngModel)]="formsData.personalDetails.fullName">
   </mat-form-field>
 
   <mat-form-field appearance="standard" class="field-full-width">
     <mat-label>Email</mat-label>
-    <textarea matInput name="email" placeholder="Email" [(ngModel)]="formsData.personalDetails.email"></textarea>
+    <textarea matInput email name="email" required type="email" placeholder="Email" [(ngModel)]="formsData.personalDetails.email"></textarea>
   </mat-form-field>
 
   <mat-form-field appearance="standard" class="field-full-width">
     <mat-label>Phone Number:</mat-label>
-    <textarea matInput name="phone-number" placeholder="Phone number" [(ngModel)]="formsData.personalDetails.phoneNumber"></textarea>
+    <textarea matInput name="phone-number" type="tel" placeholder="Phone number" [(ngModel)]="formsData.personalDetails.phoneNumber"></textarea>
   </mat-form-field>
 
-  <mat-card-actions>
-    <button mat-raised-button color="primary" (click)="onClickNext()">Next</button>
-  </mat-card-actions>
+  <div class="button-bar">
+    <button mat-raised-button color="primary"
+            [disabled]="personalDataForm.invalid"
+            (click)="onClickNext()">Next</button>
+  </div>
 </form>
