@@ -27,6 +27,7 @@ import {MatRadioModule} from '@angular/material/radio';
     ApplicationFormComponent,
     PersonalDataFormComponent,
     SalaryInfoFormComponent,
+    ReviewPageComponent,
   ],
   imports: [
     BrowserModule,
