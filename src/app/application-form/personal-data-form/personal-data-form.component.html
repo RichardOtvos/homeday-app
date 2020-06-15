@@ -1,21 +1,21 @@
-<form class="personal-data-form ">
+<form class="personal-data-form">
   <h2>Let us know a little bit about yourself...</h2>
   <mat-form-field appearance="standard" class="field-full-width">
     <mat-label>Full Name</mat-label>
-    <input matInput placeholder="Full Name" value="">
+    <input matInput  name="full-name" placeholder="Full Name" [(ngModel)]="formsData.personalDetails.fullName">
   </mat-form-field>
 
   <mat-form-field appearance="standard" class="field-full-width">
     <mat-label>Email</mat-label>
-    <textarea matInput placeholder="Email"></textarea>
+    <textarea matInput name="email" placeholder="Email" [(ngModel)]="formsData.personalDetails.email"></textarea>
   </mat-form-field>
 
   <mat-form-field appearance="standard" class="field-full-width">
     <mat-label>Phone Number:</mat-label>
-    <textarea matInput placeholder="Phone number"></textarea>
+    <textarea matInput name="phone-number" placeholder="Phone number" [(ngModel)]="formsData.personalDetails.phoneNumber"></textarea>
   </mat-form-field>
-
+  
   <mat-card-actions>
-    <button mat-button (click)="onClickNext()">Next</button>
+    <button mat-raised-button color="primary" (click)="onClickNext()">Next</button>
   </mat-card-actions>
 </form>
