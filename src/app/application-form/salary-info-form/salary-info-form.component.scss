@@ -1,0 +1,14 @@
+.field-label{
+  text-align: left;
+  font-weight: bold;
+}
+
+.mat-radio-group{
+  display: flex;
+  flex-direction: column;
+
+  .mat-radio-button{
+    margin: 5px;
+  }
+
+}

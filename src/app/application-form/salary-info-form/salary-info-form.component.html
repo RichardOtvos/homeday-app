@@ -1,0 +1,27 @@
+<form class="salary-info-form ">
+  <h2>Tell us about your financial situation...</h2>
+  <mat-form-field appearance="standard" class="field-full-width">
+    <mat-label>Current Workplace</mat-label>
+    <input matInput name="current-workplace" placeholder="Name of your workplace"
+           [(ngModel)]="formsData.salaryInfo.currentWorkplaceName">
+  </mat-form-field>
+
+  <p class="field-label"><label>What is your salary (in Euros)?</label></p>
+  <mat-radio-group name="salary-range" aria-label="Select an option" [(ngModel)]="formsData.salaryInfo.salaryRange">
+    <mat-radio-button value="0 - 1000">0 - 1000</mat-radio-button>
+    <mat-radio-button value="1000 - 2000">1000 - 2000</mat-radio-button>
+    <mat-radio-button value="2000 - 3000">2000 - 3000</mat-radio-button>
+    <mat-radio-button value="3000 - 4000">3000 - 4000</mat-radio-button>
+    <mat-radio-button value="Over 4000">Over 4000</mat-radio-button>
+  </mat-radio-group>
+
+  <p class="field-label">
+    <mat-checkbox name="has-debt" [(ngModel)]="formsData.salaryInfo.doesHaveDebt">I have some kind of debt
+    </mat-checkbox>
+  </p>
+
+  <mat-card-actions>
+    <button mat-button (click)="onClickBack()">Back</button>
+    <button mat-raised-button color="primary" (click)="onClickNext()">Next</button>
+  </mat-card-actions>
+</form>
