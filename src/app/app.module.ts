@@ -20,6 +20,7 @@ import {MatButtonModule} from '@angular/material/button';
   declarations: [
     AppComponent,
     ApplicationFormComponent,
+    PersonalDataFormComponent,
   ],
   imports: [
     BrowserModule,
