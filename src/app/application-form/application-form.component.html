@@ -1,0 +1,11 @@
+<mat-card class="application-form">
+<mat-progress-bar mode="determinate" [value]="progressBarState"></mat-progress-bar>
+  <mat-card-content [ngSwitch]="currentFormPage" >
+    <app-personal-data-form *ngSwitchCase="FORM_PAGES.PersonalData" (onNext)="goToSalaryInfoForm()"></app-personal-data-form>
+    <app-salary-info-form *ngSwitchCase="FORM_PAGES.SalaryInfo"
+                          (onNext)="goToReviewPage()"
+                          (onBack)="goToPersonalDataForm()"
+    ></app-salary-info-form>
+    <app-review-page *ngSwitchCase="FORM_PAGES.Review"></app-review-page>
+  </mat-card-content>
+</mat-card>
